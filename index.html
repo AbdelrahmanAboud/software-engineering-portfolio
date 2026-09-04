@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdelrahman Aboud — 3D Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <!-- Official Devicon Tech Logos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.16.0/devicon.min.css">
+  <link rel="stylesheet" href="./css/Portfolio.css" />
+  <!-- Three.js for 3D Background Canvas Scene -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+  <!-- 3D WEBGL CANVAS BACKGROUND -->
+  <canvas id="webgl-canvas"></canvas>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <div class="overlay" id="overlay" onclick="closeMenu()"></div>
+  <nav class="mobile-nav" id="mobileNav">
+    <button class="mobile-close" onclick="closeMenu()"><i class="fa-solid fa-xmark"></i></button>
+    <a href="#home" onclick="closeMenu()">Home</a>
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#projects" onclick="closeMenu()">Projects</a>
+    <a href="#skills" onclick="closeMenu()">Skills</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+  </nav>
+
+  <header id="header">
+    <nav>
+      <div class="logo">A<span>.</span>ABOUD</div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-icons">
+        <a href="https://github.com/AbdelrahmanAboud" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/abdelrahman-aboud-8b2212300/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <button class="mode-btn" onclick="toggleMode()" id="modeBtn"><i class="fa-solid fa-sun"></i></button>
+        <button class="menu-btn" onclick="openMenu()"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg-text">DEVELOPER</div>
+    <div class="hero-grid-line"></div>
+    <div class="container">
+      <div class="hero-text fade-up">
+        <div class="hero-tag">
+          <div class="dot"></div>
+          Available for work
+        </div>
+        <h1>ABDELRAHMAN<br><span class="name-lime">ABOUD</span></h1>
+        <h2>Full-Stack &amp; Mobile <span>Engineer</span></h2>
+        <p>I build modern, scalable web apps, mobile applications, and intelligent systems. 2nd-year Computer Engineering student turning complex ideas into clean, working products.</p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn-lime"><i class="fa-solid fa-arrow-down"></i> View Projects</a>
+          <a href="#contact" class="btn-outline">Contact Me</a>
+          <a href="./assets/CV_SoftwareEngineering.pdf" download class="btn-outline"><i class="fa-solid fa-download"></i> Download CV</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <h3>6+</h3>
+            <p>Major Projects</p>
+          </div>
+          <div class="stat">
+            <h3>12+</h3>
+            <p>Technologies</p>
+          </div>
+          <div class="stat">
+            <h3>100+</h3>
+            <p>Students Mentored</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image fade-up" style="animation-delay:0.2s">
+        <div class="hero-img-wrap">
+          <img class="person" src="assets/personal_removebg-preview.png" alt="Abdelrahman Aboud">
+        </div>
+        <div class="hero-badge">
+          <span>3rd</span>
+          Year CS Eng.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-img fade-up">
+<img src="assets/personal_img2.jpg" alt="Profile Picture">
+        <div class="about-img-frame"></div>
+        <div class="about-exp-badge">
+          <div class="num">3.9</div>
+          <div class="label">GPA</div>
+        </div>
+      </div>
+      <div class="about-text fade-up">
+        <p class="tag">// About Me</p>
+        <h2>FULL-STACK &amp;<br><span>MOBILE DEVELOPER</span></h2>
+        <h4>Building user-focused apps with modern tools and clean architecture.</h4>
+        <p>I'm Abdelrahman Aboud, a Computer Engineering student at Capital University (GPA: 3.9). I'm passionate about building complete digital products — from sleek React frontends and Flutter mobile apps to scalable Node.js backends and AI-powered systems. I also mentor 100+ students in competitive programming at the CPC community.</p>
+        <ul class="about-checklist">
+          <li><i class="fa-solid fa-check"></i> 3rd Year — Capital University</li>
+          <li><i class="fa-solid fa-check"></i> Competitive Programming Mentor</li>
+          <li><i class="fa-solid fa-check"></i> Flutter &amp; React Specialist</li>
+          <li><i class="fa-solid fa-check"></i> Node.js / Express / MongoDB</li>
+          <li><i class="fa-solid fa-check"></i> AI Integration (RAG, Gemini)</li>
+          <li><i class="fa-solid fa-check"></i> Embedded Systems &amp; IoT</li>
+        </ul>
+        <div class="about-actions">
+          <a href="./assets/CV_SoftwareEngineering.pdf" download class="btn-lime"><i class="fa-solid fa-download"></i> Download CV</a>
+          <a href="#contact" class="btn-outline">Let's Talk</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="section-header fade-up">
+        <p class="section-tag">// Selected Work</p>
+        <h2>MY <span>PROJECTS</span></h2>
+      </div>
+      <div class="projects-grid">
+
+        <!-- FEATURED SHOWCASE: UniSystem (3D GALLERY) -->
+        <div class="project-showcase-3d fade-up project-unisystem">
+          <div class="showcase-header-3d">
+            <div class="showcase-info-left">
+              <div class="project-num">02</div>
+              <h3>UniSystem — University Management Platform</h3>
+              <p>AI-powered university platform bridging 4 layers: React frontend, Node.js backend, Python AI service, and an Arduino-integrated NFC attendance system — for comprehensive management of students, professors, and courses.</p>
+              <div class="project-tags">
+                <span class="project-tag">React</span>
+                <span class="project-tag">Node.js</span>
+                <span class="project-tag">Python AI</span>
+                <span class="project-tag">Arduino NFC</span>
+                <span class="project-tag">RAG / LLM</span>
+                <span class="project-tag">MongoDB</span>
+              </div>
+              <a href="https://lnkd.in/p/e5pSmza6" target="_blank" rel="noopener noreferrer" class="showcase-demo-btn" id="unisystem-demo-link">
+                <span class="demo-btn-icon"><i class="fa-solid fa-circle-play"></i></span>
+                <span class="demo-btn-text">
+                  <span class="demo-btn-label">Live Demo</span>
+                  <span class="demo-btn-sub">Watch the full walkthrough video</span>
+                </span>
+                <i class="fa-solid fa-arrow-up-right-from-square demo-btn-arrow"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 3D DRAGGABLE SCREENSHOT CAROUSEL STAGE -->
+          <div class="gallery-coverflow-wrapper">
+            <div class="draggable-gallery-3d" data-draggable-gallery="unisystem">
+              <div class="gallery-track-3d">
+                <div class="gallery-slide-3d active"><img src="assets/unisystem/1.png" alt="UniSystem Screenshot 1"></div>
+                <div class="gallery-slide-3d"><img src="assets/unisystem/2.png" alt="UniSystem Screenshot 2"></div>
+                <div class="gallery-slide-3d"><img src="assets/unisystem/3.png" alt="UniSystem Screenshot 3"></div>
+                <div class="gallery-slide-3d"><img src="assets/unisystem/4.png" alt="UniSystem Screenshot 4"></div>
+                <div class="gallery-slide-3d"><img src="assets/unisystem/5.png" alt="UniSystem Screenshot 5"></div>
+                <div class="gallery-slide-3d"><img src="assets/unisystem/6.png" alt="UniSystem Screenshot 6"></div>
+                <div class="gallery-slide-3d"><img src="assets/unisystem/7.png" alt="UniSystem Screenshot 7"></div>
+                <div class="gallery-slide-3d"><img src="assets/unisystem/8.png" alt="UniSystem Screenshot 8"></div>
+                <div class="gallery-slide-3d"><img src="assets/unisystem/9.png" alt="UniSystem Screenshot 9"></div>
+                <div class="gallery-slide-3d"><img src="assets/unisystem/10.png" alt="UniSystem Screenshot 10"></div>
+              </div>
+              <button class="gallery-nav-btn prev" onclick="moveGallery('unisystem', -1)"><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="gallery-nav-btn next" onclick="moveGallery('unisystem', 1)"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+
+          <!-- THUMBNAILS STRIP FOR 10 IMAGES -->
+          <div class="gallery-thumbnails-strip" data-thumbnails="unisystem">
+            <img src="assets/unisystem/1.png" class="thumb active" onclick="setGallerySlide('unisystem', 0)" alt="Thumb 1">
+            <img src="assets/unisystem/2.png" class="thumb" onclick="setGallerySlide('unisystem', 1)" alt="Thumb 2">
+            <img src="assets/unisystem/3.png" class="thumb" onclick="setGallerySlide('unisystem', 2)" alt="Thumb 3">
+            <img src="assets/unisystem/4.png" class="thumb" onclick="setGallerySlide('unisystem', 3)" alt="Thumb 4">
+            <img src="assets/unisystem/5.png" class="thumb" onclick="setGallerySlide('unisystem', 4)" alt="Thumb 5">
+            <img src="assets/unisystem/6.png" class="thumb" onclick="setGallerySlide('unisystem', 5)" alt="Thumb 6">
+            <img src="assets/unisystem/7.png" class="thumb" onclick="setGallerySlide('unisystem', 6)" alt="Thumb 7">
+            <img src="assets/unisystem/8.png" class="thumb" onclick="setGallerySlide('unisystem', 7)" alt="Thumb 8">
+            <img src="assets/unisystem/9.png" class="thumb" onclick="setGallerySlide('unisystem', 8)" alt="Thumb 9">
+            <img src="assets/unisystem/10.png" class="thumb" onclick="setGallerySlide('unisystem', 9)" alt="Thumb 10">
+          </div>
+        </div>
+
+        <!-- FEATURED SHOWCASE: Smart Dental Care (3D GALLERY) -->
+        <div class="project-showcase-3d fade-up project-dental">
+          <div class="showcase-header-3d">
+            <div class="showcase-info-left">
+              <div class="project-num">03</div>
+              <h3>Smart Dental Care System</h3>
+              <p>Comprehensive AI-powered dental clinic management ecosystem — featuring a Gemini AI dental assistant, interactive tooth chart for doctors, contactless QR attendance, email billing, and Family Mode support for account management.</p>
+              <div class="project-tags">
+                <span class="project-tag">Flutter</span>
+                <span class="project-tag">Firebase</span>
+                <span class="project-tag">Gemini AI</span>
+                <span class="project-tag">EmailJS</span>
+                <span class="project-tag">QR Check-in</span>
+              </div>
+              <a href="https://lnkd.in/p/ePqSpCRp" target="_blank" rel="noopener noreferrer" class="showcase-demo-btn" id="dental-demo-link">
+                <span class="demo-btn-icon"><i class="fa-solid fa-circle-play"></i></span>
+                <span class="demo-btn-text">
+                  <span class="demo-btn-label">Live Demo</span>
+                  <span class="demo-btn-sub">Watch the full walkthrough video</span>
+                </span>
+                <i class="fa-solid fa-arrow-up-right-from-square demo-btn-arrow"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 3D DRAGGABLE SCREENSHOT GALLERY -->
+          <div class="gallery-coverflow-wrapper">
+            <div class="draggable-gallery-3d mobile-gallery-3d" data-draggable-gallery="dental">
+              <div class="gallery-track-3d">
+                <div class="gallery-slide-3d active"><img src="assets/Smart_Dintal_Care/3.jpeg" alt="Smart Dental Screenshot 1"></div>
+                <div class="gallery-slide-3d"><img src="assets/Smart_Dintal_Care/4.jpeg" alt="Smart Dental Screenshot 2"></div>
+                <div class="gallery-slide-3d"><img src="assets/Smart_Dintal_Care/2.jpeg" alt="Smart Dental Screenshot 3"></div>
+                <div class="gallery-slide-3d"><img src="assets/Smart_Dintal_Care/13.jpeg" alt="Smart Dental Screenshot 4"></div>
+                <div class="gallery-slide-3d"><img src="assets/Smart_Dintal_Care/6.jpeg" alt="Smart Dental Screenshot 5"></div>
+                <div class="gallery-slide-3d"><img src="assets/Smart_Dintal_Care/7.jpeg" alt="Smart Dental Screenshot 6"></div>
+                <div class="gallery-slide-3d"><img src="assets/Smart_Dintal_Care/1.jpeg" alt="Smart Dental Screenshot 7"></div>
+                <div class="gallery-slide-3d"><img src="assets/Smart_Dintal_Care/9.jpeg" alt="Smart Dental Screenshot 8"></div>
+                <div class="gallery-slide-3d"><img src="assets/Smart_Dintal_Care/8.jpeg" alt="Smart Dental Screenshot 9"></div>
+                <div class="gallery-slide-3d"><img src="assets/Smart_Dintal_Care/12.jpeg" alt="Smart Dental Screenshot 10"></div>
+              </div>
+              <button class="gallery-nav-btn prev" onclick="moveGallery('dental', -1)"><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="gallery-nav-btn next" onclick="moveGallery('dental', 1)"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+
+          <!-- THUMBNAILS STRIP -->
+          <div class="gallery-thumbnails-strip mobile-thumbnails" data-thumbnails="dental">
+            <img src="assets/Smart_Dintal_Care/3.jpeg" class="thumb active" onclick="setGallerySlide('dental', 0)" alt="Thumb 1">
+            <img src="assets/Smart_Dintal_Care/4.jpeg" class="thumb" onclick="setGallerySlide('dental', 1)" alt="Thumb 2">
+            <img src="assets/Smart_Dintal_Care/2.jpeg" class="thumb" onclick="setGallerySlide('dental', 2)" alt="Thumb 3">
+            <img src="assets/Smart_Dintal_Care/13.jpeg" class="thumb" onclick="setGallerySlide('dental', 3)" alt="Thumb 4">
+            <img src="assets/Smart_Dintal_Care/6.jpeg" class="thumb" onclick="setGallerySlide('dental', 4)" alt="Thumb 5">
+            <img src="assets/Smart_Dintal_Care/7.jpeg" class="thumb" onclick="setGallerySlide('dental', 5)" alt="Thumb 6">
+            <img src="assets/Smart_Dintal_Care/1.jpeg" class="thumb" onclick="setGallerySlide('dental', 6)" alt="Thumb 7">
+            <img src="assets/Smart_Dintal_Care/9.jpeg" class="thumb" onclick="setGallerySlide('dental', 7)" alt="Thumb 8">
+            <img src="assets/Smart_Dintal_Care/8.jpeg" class="thumb" onclick="setGallerySlide('dental', 8)" alt="Thumb 9">
+            <img src="assets/Smart_Dintal_Care/12.jpeg" class="thumb" onclick="setGallerySlide('dental', 9)" alt="Thumb 10">
+          </div>
+        </div>
+
+        <!-- Coffee Shop App -->
+        <div class="project-showcase-3d fade-up project-coffee">
+          <div class="showcase-header-3d">
+            <div class="showcase-info-left">
+              <div class="project-num">04</div>
+              <h3>Coffee Shop App</h3>
+              <p>Full-featured Flutter coffee shop application with a smooth ordering flow, Firebase real-time sync, cart management, and an admin dashboard for products and orders.</p>
+              <div class="project-tags">
+                <span class="project-tag">Flutter</span>
+                <span class="project-tag">Firebase</span>
+                <span class="project-tag">Provider</span>
+                <span class="project-tag">Mobile UI</span>
+              </div>
+              <a href="https://lnkd.in/p/eMhmr_WX" target="_blank" rel="noopener noreferrer" class="showcase-demo-btn" id="coffee-demo-link">
+                <span class="demo-btn-icon"><i class="fa-solid fa-circle-play"></i></span>
+                <span class="demo-btn-text">
+                  <span class="demo-btn-label">Live Demo</span>
+                  <span class="demo-btn-sub">Open the Coffee Shop project demo</span>
+                </span>
+                <i class="fa-solid fa-arrow-up-right-from-square demo-btn-arrow"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="gallery-coverflow-wrapper">
+            <div class="draggable-gallery-3d mobile-gallery-3d" data-draggable-gallery="coffee">
+              <div class="gallery-track-3d">
+                <div class="gallery-slide-3d active"><img src="assets/coffe_shop/1.jpeg" alt="Coffee Shop screenshot 1"></div>
+                <div class="gallery-slide-3d"><img src="assets/coffe_shop/2.jpeg" alt="Coffee Shop screenshot 2"></div>
+                <div class="gallery-slide-3d"><img src="assets/coffe_shop/3.jpeg" alt="Coffee Shop screenshot 3"></div>
+                <div class="gallery-slide-3d"><img src="assets/coffe_shop/4.jpeg" alt="Coffee Shop screenshot 4"></div>
+                <div class="gallery-slide-3d"><img src="assets/coffe_shop/5.jpeg" alt="Coffee Shop screenshot 5"></div>
+                <div class="gallery-slide-3d"><img src="assets/coffe_shop/6.jpeg" alt="Coffee Shop screenshot 6"></div>
+                <div class="gallery-slide-3d"><img src="assets/coffe_shop/7.jpeg" alt="Coffee Shop screenshot 7"></div>
+                <div class="gallery-slide-3d"><img src="assets/coffe_shop/8.jpeg" alt="Coffee Shop screenshot 8"></div>
+              </div>
+              <button class="gallery-nav-btn prev" onclick="moveGallery('coffee', -1)"><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="gallery-nav-btn next" onclick="moveGallery('coffee', 1)"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+
+          <div class="gallery-thumbnails-strip mobile-thumbnails" data-thumbnails="coffee">
+            <img src="assets/coffe_shop/1.jpeg" class="thumb active" onclick="setGallerySlide('coffee', 0)" alt="Coffee Shop thumbnail 1">
+            <img src="assets/coffe_shop/2.jpeg" class="thumb" onclick="setGallerySlide('coffee', 1)" alt="Coffee Shop thumbnail 2">
+            <img src="assets/coffe_shop/3.jpeg" class="thumb" onclick="setGallerySlide('coffee', 2)" alt="Coffee Shop thumbnail 3">
+            <img src="assets/coffe_shop/4.jpeg" class="thumb" onclick="setGallerySlide('coffee', 3)" alt="Coffee Shop thumbnail 4">
+            <img src="assets/coffe_shop/5.jpeg" class="thumb" onclick="setGallerySlide('coffee', 4)" alt="Coffee Shop thumbnail 5">
+            <img src="assets/coffe_shop/6.jpeg" class="thumb" onclick="setGallerySlide('coffee', 5)" alt="Coffee Shop thumbnail 6">
+            <img src="assets/coffe_shop/7.jpeg" class="thumb" onclick="setGallerySlide('coffee', 6)" alt="Coffee Shop thumbnail 7">
+            <img src="assets/coffe_shop/8.jpeg" class="thumb" onclick="setGallerySlide('coffee', 7)" alt="Coffee Shop thumbnail 8">
+          </div>
+
+          <div class="content-3d">
+            <ul class="project-features">
+              <li>Firebase Auth + OTP + persistent sessions</li>
+              <li>Cart, favorites, order tracking</li>
+              <li>Admin dashboard for products &amp; orders</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Smart City Desktop App -->
+        <div class="project-showcase-3d fade-up project-smartcity">
+          <div class="showcase-header-3d">
+            <div class="showcase-info-left">
+              <div class="project-num">01</div>
+              <h3>Smart City Desktop App</h3>
+              <p>Cross-platform smart city application with role-based dashboards, interactive maps, real-time resident communication, and an embedded e-commerce module.</p>
+              <div class="project-tags">
+                <span class="project-tag">JavaFX</span>
+                <span class="project-tag">Desktop UI</span>
+                <span class="project-tag">Interactive Maps</span>
+                <span class="project-tag">Real-time Chat</span>
+              </div>
+              <a href="https://lnkd.in/p/eEZmXNnr" target="_blank" rel="noopener noreferrer" class="showcase-demo-btn" id="smartcity-demo-link">
+                <span class="demo-btn-icon"><i class="fa-solid fa-circle-play"></i></span>
+                <span class="demo-btn-text">
+                  <span class="demo-btn-label">Live Demo</span>
+                  <span class="demo-btn-sub">Watch the Smart City project walkthrough</span>
+                </span>
+                <i class="fa-solid fa-arrow-up-right-from-square demo-btn-arrow"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="gallery-coverflow-wrapper">
+            <div class="draggable-gallery-3d" data-draggable-gallery="smartcity">
+              <div class="gallery-track-3d">
+                <div class="gallery-slide-3d active"><img src="assets/Smart City/1.png" alt="Smart City dashboard screenshot 1"></div>
+                <div class="gallery-slide-3d"><img src="assets/Smart City/2.png" alt="Smart City dashboard screenshot 2"></div>
+                <div class="gallery-slide-3d"><img src="assets/Smart City/3.png" alt="Smart City dashboard screenshot 3"></div>
+                <div class="gallery-slide-3d"><img src="assets/Smart City/4.png" alt="Smart City dashboard screenshot 4"></div>
+                <div class="gallery-slide-3d"><img src="assets/Smart City/5.png" alt="Smart City dashboard screenshot 5"></div>
+                <div class="gallery-slide-3d"><img src="assets/Smart City/6.png" alt="Smart City dashboard screenshot 6"></div>
+                <div class="gallery-slide-3d"><img src="assets/Smart City/7.png" alt="Smart City dashboard screenshot 7"></div>
+                <div class="gallery-slide-3d"><img src="assets/Smart City/8.png" alt="Smart City dashboard screenshot 8"></div>
+              </div>
+              <button class="gallery-nav-btn prev" onclick="moveGallery('smartcity', -1)"><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="gallery-nav-btn next" onclick="moveGallery('smartcity', 1)"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+
+          <div class="gallery-thumbnails-strip" data-thumbnails="smartcity">
+            <img src="assets/Smart City/1.png" class="thumb active" onclick="setGallerySlide('smartcity', 0)" alt="Smart City thumbnail 1">
+            <img src="assets/Smart City/2.png" class="thumb" onclick="setGallerySlide('smartcity', 1)" alt="Smart City thumbnail 2">
+            <img src="assets/Smart City/3.png" class="thumb" onclick="setGallerySlide('smartcity', 2)" alt="Smart City thumbnail 3">
+            <img src="assets/Smart City/4.png" class="thumb" onclick="setGallerySlide('smartcity', 3)" alt="Smart City thumbnail 4">
+            <img src="assets/Smart City/5.png" class="thumb" onclick="setGallerySlide('smartcity', 4)" alt="Smart City thumbnail 5">
+            <img src="assets/Smart City/6.png" class="thumb" onclick="setGallerySlide('smartcity', 5)" alt="Smart City thumbnail 6">
+            <img src="assets/Smart City/7.png" class="thumb" onclick="setGallerySlide('smartcity', 6)" alt="Smart City thumbnail 7">
+            <img src="assets/Smart City/8.png" class="thumb" onclick="setGallerySlide('smartcity', 7)" alt="Smart City thumbnail 8">
+          </div>
+
+          <div class="content-3d">
+            <ul class="project-features">
+              <li>Interactive maps + weather panel</li>
+              <li>Real-time chat UI</li>
+              <li>Residents, Providers &amp; Admin dashboards</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <div class="section-header fade-up">
+        <p class="section-tag">// Technical Arsenal</p>
+        <h2>MY <span>SKILLS</span></h2>
+      </div>
+      <div class="skills-filters fade-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="frontend">Frontend</button>
+        <button class="filter-btn" data-filter="backend">Backend</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+        <button class="filter-btn" data-filter="languages">Languages</button>
+      </div>
+      <div class="skills-grid" id="skillsGrid">
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header fade-up">
+        <p class="section-tag">// Get In Touch</p>
+        <h2>CONTACT <span>ME</span></h2>
+      </div>
+      <div class="contact-grid fade-up">
+        <div class="contact-info">
+          <h3>LET'S BUILD<br><span>SOMETHING GREAT</span></h3>
+          <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+          <div class="contact-links">
+            <a href="mailto:abdelrahmanaboud21@gmail.com" class="contact-link">
+              <i class="fa-solid fa-envelope"></i>
+              abdelrahmanaboud21@gmail.com
+            </a>
+            <a href="https://www.linkedin.com/in/abdelrahman-aboud-8b2212300/" target="_blank" class="contact-link">
+              <i class="fa-brands fa-linkedin"></i>
+              linkedin.com/in/abdelrahman-aboud
+            </a>
+            <a href="https://wa.me/201552695124" target="_blank" class="contact-link">
+              <i class="fa-brands fa-whatsapp"></i>
+              +20 155 269 5124
+            </a>
+            <a href="https://github.com/AbdelrahmanAboud" target="_blank" class="contact-link">
+              <i class="fa-brands fa-github"></i>
+              github.com/AbdelrahmanAboud
+            </a>
+          </div>
+        </div>
+        <div class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="your@email.com">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone</label>
+              <input type="text" placeholder="+20 ...">
+            </div>
+            <div class="form-group">
+              <label>Subject</label>
+              <input type="text" placeholder="Project inquiry...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Tell me about your project..."></textarea>
+          </div>
+          <button class="submit-btn">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 <span>Abdelrahman Aboud</span> — Built with passion &amp; caffeine ☕</p>
+    </div>
+  </footer>
+
+    <script src="./js/Portfolio.js"></script>
+
+</body>
+</html>
